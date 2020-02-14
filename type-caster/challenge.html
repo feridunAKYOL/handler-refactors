@@ -38,7 +38,18 @@
       { name: 'twelfth', args: ['anything else!', 'undefined',], expected: undefined },
     ];
 
-    function typeCaster(value, type) { }
+    function typeCaster(value, type) { 
+      if (type === 'string') {
+        value = String(value);
+      } else if (type === 'number') {
+        value = Number(value);
+      } else if (type === 'boolean') {
+        value = Boolean(value);
+      } else {
+        value = undefined;
+      }
+    return value;  
+    }
 
     testing(typeCaster, typeCasterTests);
   </script>
