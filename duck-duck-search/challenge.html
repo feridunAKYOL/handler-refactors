@@ -28,7 +28,12 @@
       { name: 'fifth', args: ['==-+_ *&^*<>diso }{[si'], expected: 'https://duckduckgo.com/?q=%3D%3D-%2B_%20*%26%5E*%3C%3Ediso%20%7D%7B%5Bsi' },
     ];
 
-    function generateSearchURL(searchQuery) { }
+    function generateSearchURL(searchQuery) { 
+      const encodedQuery = encodeURIComponent(searchQuery);
+      const searchURL = 'https://duckduckgo.com/?q=' + encodedQuery;
+
+      return searchURL;  
+    }
 
     testing(generateSearchURL, generateSearchURLTests);
   </script>
