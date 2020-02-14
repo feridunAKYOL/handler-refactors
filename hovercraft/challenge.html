@@ -36,7 +36,9 @@
       { name: 'fifth', args: ['train'], expected: 'train-class' },
     ];
 
-    function _(which) { }
+    function createClassName(which) { 
+      return which = which + '-class';
+    }
 
     testing(createClassName, createClassNameTests);
   </script>
